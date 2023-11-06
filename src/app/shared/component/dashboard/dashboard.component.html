@@ -1,0 +1,47 @@
+
+
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col  text-right">
+      <button type="button" class="btn btn-primary" (click)="adddata()">Add customer</button>
+    </div>
+
+  </div>
+  <div class="row">
+    <table class="table mt-3">
+      <thead>
+        <tr class="bg-info">
+          <th scope="col">Sr No </th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone No </th>
+          <th scope="col"> Delete </th>
+          <th scope="col"> Edit </th>
+          <th scope="col"> View customer </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of userObj | paginate :{itemsPerPage:psize,currentPage:currentPage}; index as i">
+          <th scope="row">{{i + 1+(psize*(currentPage-1))}}</th>
+          <td>{{data.first_name}}</td>
+          <td>{{data.last_name}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.phone_no}}</td>
+          <td> <button class="btn btn-danger" (click)="deleteById(data.id)">delete</button>
+          </td>
+          <td> <button class="btn btn-success" (click)="editById(data.id)">edit</button>
+          </td>
+          <td> <button class="btn btn-dark" (click)="viewById(data.id)">view</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+    <pagination-controls (pageChange)="currentPage=$event">
+    </pagination-controls>
+  </div>
+</div>

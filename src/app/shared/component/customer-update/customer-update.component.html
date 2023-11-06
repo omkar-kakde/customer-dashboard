@@ -1,0 +1,44 @@
+
+
+
+
+
+<h2 class="bg-info text-center">Edit the Customer details</h2>
+
+<div class="col-md-6 offset-md-3">
+
+    <form [formGroup]="loginform" (ngSubmit)="update()">
+        <div class="form-group">
+            <label for="">Id</label>
+            <input type="number" [disabled]="isDisabled" class="form-control" formControlName="id" id="username">
+        </div>
+        <div class="form-group">
+            <label for="first name">First name</label>
+            <input type="text"  class="form-control" formControlName="first_name" id="first_name">
+        </div>
+        <div class="form-group">
+            <label for="last name">Last name</label>
+            <input type="text" class="form-control" formControlName="last_name" id="last_name">
+        </div>
+        <div class="form-group">
+            <label for="Email"  >Email</label>
+            <input type="text" class="form-control" formControlName="email"  id="email">
+        </div>
+        <div class="form-group">
+            <label for="phone_no">Phone No</label>
+            <input type="text" class="form-control" formControlName="phone_no" id="phone_no">
+        </div>
+        <!-- <div class="form-group">
+            <button class="btn btn-primary" >update</button>
+            <button class="btn btn-primary" >update</button>
+        </div> -->
+        
+         <div class="row">
+            <div class="col"> <button class="btn btn-primary" (click)="cancel()" > Cancel update</button></div>
+            <div class="col"> <button class="btn btn-primary text-right" >update</button></div>
+         </div>
+
+    </form>
+
+</div>
+

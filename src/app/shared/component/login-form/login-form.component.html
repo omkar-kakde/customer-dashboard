@@ -1,0 +1,52 @@
+
+
+
+
+<div class="container">
+    <div class="row">
+      <mat-card>
+        <mat-card-title color="primary">Login To Page</mat-card-title>
+        <mat-card-content>
+      
+          <form [formGroup]="loginform" (ngSubmit)="submit()">
+            <p>
+              <mat-form-field>
+                <input type="text" [class.is-invalid]="f['username'].invalid && f['username'].touched" matInput
+                  placeholder="Username" formControlName="username">
+              </mat-form-field>
+            </p>
+      
+            <p>
+              <mat-form-field>
+                <input type="password" [class.is-invalid]="f['passwords'].invalid && f['passwords'].touched" matInput
+                  placeholder="Password" formControlName="passwords">
+              </mat-form-field>
+            </p>
+      
+            <div class="button">
+              <button mat-raised-button type="submit">Login</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  
+  
+    <div class="row mt-5">
+      <p class="bg-danger  text-center "> (For  testing purposes only Username : omkar  , Password : pass) </p>
+    </div>
+  
+  
+  </div>
+  
+  
+  
+    
+    
+    
+  
+  
+  
+    
+  
+  

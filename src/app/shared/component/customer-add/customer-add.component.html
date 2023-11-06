@@ -1,0 +1,72 @@
+
+<h2 class="bg-info text-center">Add new Customer details</h2>
+
+<div class="col-md-6 offset-md-3">
+
+
+    <form [formGroup]="loginform" (ngSubmit)="createCard()">
+        <div class="form-group">
+            <label for="">Id</label>
+            <input type="text" [class.is-invalid]="f['id'].invalid && f['id'].touched" class="form-control"
+                formControlName="id">
+        </div>
+        <div class="alert alert-danger" *ngIf="f['id'].invalid && f['id'].touched">
+            <div *ngIf="f['id'].errors && f['id'].errors['required']">
+                id is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">First name</label>
+            <input type="text" [class.is-invalid]="f['first_name'].invalid && f['first_name'].touched"
+                class="form-control" formControlName="first_name">
+        </div>
+        <div class="alert alert-danger" *ngIf="f['first_name'].invalid && f['first_name'].touched">
+            <div *ngIf="f['first_name'].errors && f['first_name'].errors['required']">
+                first_name is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Last name</label>
+            <input type="text" [class.is-invalid]="f['last_name'].invalid && f['last_name'].touched"
+                class="form-control" formControlName="last_name">
+        </div>
+        <div class="alert alert-danger" *ngIf="f['last_name'].invalid && f['last_name'].touched">
+            <div *ngIf="f['last_name'].errors && f['last_name'].errors['required']">
+                last_name is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" [class.is-invalid]="f['email'].invalid && f['email'].touched" class="form-control"
+                formControlName="email">
+        </div>
+        <div class="alert alert-danger" *ngIf="f['email'].invalid && f['email'].touched">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                email is required
+            </div>
+            <div *ngIf="f['email'].errors && f['email'].errors['pattern']">
+                plz insert valid email address
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Phone No</label>
+            <input type="text" [class.is-invalid]="f['phone_no'].invalid && f['phone_no'].touched" class="form-control"
+                formControlName="phone_no">
+        </div>
+        <div class="alert alert-danger" *ngIf="f['phone_no'].invalid && f['phone_no'].touched">
+            <div *ngIf="f['phone_no'].errors && f['phone_no'].errors['required']">
+                phone_no is required
+            </div>
+            <div class="alert alert-danger" *ngIf="f['phone_no'].invalid && f['phone_no'].touched">
+                <div *ngIf="f['phone_no'].errors && f['phone_no'].errors['minlength']">
+                    min 10 number
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-lg btn-block" [disabled]="loginform.invalid">Add data</button>
+        </div>
+    </form>
+
+</div>
